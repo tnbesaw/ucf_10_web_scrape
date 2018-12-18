@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{url_for('static', filename='styles/styles.css')}}"/>
+</head>
+
+<body>
+	<div class="container">
+
+		<div class="row x_minus_padding">
+			<div class="jumbotron text-center">
+				<h1>Mission to Mars</h1>
+				<p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+			</div>
+		</div>
+
+    	<!-- News -->    
+    	<div class="row x_minus_margin" id="mars-news">
+			<div class="x_region_header">Latest Mars News</div>
+			<div class="col-md-12 x_region_body">
+				{% if results.news[0] is defined %}
+					<h4>{{results.news[0].news_title}}</h4>
+					<p>{{results.news[0].news_desc}}</p>
+				{% else %}
+					<h4>New Title Undefined</h4>
+					<p>News Description Undefined</p>
+				{% endif %}			
+			</div>
+		</div>
+
+    	<!-- Featured Image -->
+		<div class="row x_minus_margin">		
+			<div class="col-md-8 x_minus_padding">
+				<div class="x_region_header">Featured Mars Image</div>		
+				<div class="row">
+					<div class="col-md-12 x_region_feature_body">		
+						<img src={{results.featured}} alt="Featured Image" class="x_img_feature">
+					</div>
+				</div>
+			</div>    
+
+			<div class="col-md-4">
+				<div class="x_region_header">Current Weather on Mars</div>		
+				<div class="x_region_body">{{results.weather}}</div>
+				<div class="x_region_header">Mars Facts</div>		
+				<div class="x_region_body">{{results.facts|safe}}</div>
+			</div>			
+		</div>
+
+    <!-- Hemispheres -->
+		<div class="row x_minus_margin" id="mars-hemispheres">
+			<div class="x_region_header">Mars Hemispheres</div>
+			<div class="row">
+				<div class="col-md-6 x_region_hem">
+					{% if results.hemisphere[0] is defined %}
+						<img src={{results.hemisphere[0].img_url}} alt="Hemisphere 0" class="x_img_hem"></a>
+						<h4>{{results.hemisphere[0].img_title}}</h4>
+						{% else %}
+						<img src= alt="Hemisphere 0" class="x_img_hem"></a>
+						<h4>Site Not Acquired</h4>
+					{% endif %}			
+				</div>
+				<div class="col-md-6 x_region_hem">
+					{% if results.hemisphere[1] is defined %}
+						<img src={{results.hemisphere[1].img_url}} alt="Hemisphere 1" class="x_img_hem"></a>
+						<h4>{{results.hemisphere[1].img_title}}</h4>
+					{% else %}
+						<img src= alt="Hemisphere 1" class="x_img_hem"></a>
+						<h4>Site Not Acquired</h4>
+					{% endif %}			
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 x_region_hem">
+					{% if results.hemisphere[2] is defined %}
+						<img src={{results.hemisphere[2].img_url}} alt="Hemisphere 2" class="x_img_hem"></a>
+						<h4>{{results.hemisphere[2].img_title}}</h4>
+					{% else %}
+						<img src= alt="Hemisphere 2" class="x_img_hem"></a>
+						<h4>Site Not Acquired</h4>
+					{% endif %}			
+				</div>
+				<div class="col-md-6 x_region_hem">
+					{% if results.hemisphere[3] is defined %}
+						<img src={{results.hemisphere[3].img_url}} alt="Hemisphere 3" class="x_img_hem"></a>
+						<h4>{{results.hemisphere[3].img_title}}</h4>
+					{% else %}
+						<img src= alt="Hemisphere 3" class="x_img_hem"></a>
+						<h4>Site Not Acquired</h4>
+					{% endif %}			
+				</div>
+			</div>
+		</div>
+		<br>
+		<br>
+	</div>
+
+</body>
+</html>
+

@@ -1,0 +1,84 @@
+/**********************************************************
+   
+ Custom Styles 
+
+***********************************************************/
+/* jumbotron - move down slightly */
+.jumbotron {
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+/* format each region header */
+.x_region_header {
+    margin-top: 30px; 
+    border-bottom: 1px solid #eee;    
+    font-size: 1.8em;
+    font-weight: 400;
+}
+
+.x_minus_margin {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.x_minus_padding {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.x_region_body {
+    margin-top: 20px;
+}
+
+.x_region_feature_body {
+    text-align: center;
+}
+
+/* feature image adjustments */
+.x_img_feature {
+    margin-top: 20px;
+    width: 700px;
+    border-radius: 16px;
+}
+
+/* fact table formatting */
+table.dataframe, .dataframe th, .dataframe td {
+    border: none;
+    border-bottom: 1px solid #C8C8C8;
+    border-collapse: collapse;
+    text-align:left;
+    padding: 8px;
+    margin-bottom: 40px; 
+    font-size: 0.9em;
+}
+
+/* fact table formatting 
+   set backgroud of first column */
+.dataframe td:nth-child(2) {
+    background-color: gainsboro;    
+    font-weight: bold;
+}
+
+/* fact table formatting 
+   hide the th */
+th {
+    display: none;
+}
+ 
+/* fact table formatting 
+   hover color */
+tr:hover { 
+    background-color: #ffff99;
+}
+
+/* resize small images */
+.x_img_hem {
+    width: 400px;
+    border-radius: 16px;
+}
+
+.x_region_hem {
+    margin-top: 20px;
+    text-align: center;
+}
